@@ -18,7 +18,11 @@
   },
   "homepage": "https://github.com/dimaka77/myDashboard#readme",
   "dependencies": {
+    "bcrypt": "^4.0.1",
     "express": "^4.17.1",
-    "nodemon": "^2.0.2"
+    "mongoose": "^5.9.3",
+    "nodemon": "^2.0.2",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0"
   }
 }

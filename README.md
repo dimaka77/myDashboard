@@ -1,2 +1,0 @@
-# myDashboard
-Personal dashboard app

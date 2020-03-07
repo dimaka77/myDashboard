@@ -16,22 +16,25 @@ module.exports = function(passport) {
         passwordField: 'password',
         passReqToCallback: true
       },
-      (requestAnimationFrame, email, password, done) => {
+      (req, email, password, done) => {
         process.nextTick(() => {
-          User.findOne({ email: email }, (err, user) => {
+          User.findOne({ email: email.trim() }, (err, user) => {
             if (err) return done(err);
 
             if (user) {
-              return done(
-                null,
-                false,
-                req.flash('signupMessage', 'The emial is already taken,')
+              const error = new Error(
+                'An account with this username already exists.'
               );
+              error.status = 400;
+              error.name = 'ValidationError';
+
+              return done(error, user);
             } else {
               const newUser = new User();
 
-              newUser.email = email;
+              newUser.email = email.trim();
               newUser.password = newUser.generateHash(password);
+              newUser.name = req.body.name.trim();
 
               newUser.save(err => {
                 if (err) throw err;

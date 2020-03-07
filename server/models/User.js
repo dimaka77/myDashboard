@@ -4,7 +4,8 @@ const { Schema } = mongoose;
 
 let userschema = new Schema({
   email: String,
-  password: String
+  password: String,
+  name: String
 });
 
 userschema.methods.generateHash = password => {

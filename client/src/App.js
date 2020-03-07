@@ -6,7 +6,7 @@ import rootReducer from './reducers';
 // Router
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 // Components
-import { Home, SingIn, SingUp } from './components';
+import { Home, SignIn, SignUp } from './components';
 
 import './App.css';
 
@@ -24,10 +24,10 @@ function App() {
                                 <Link to="/">Home</Link>
                             </li>
                             <li>
-                                <Link to="/about">About</Link>
+                                <Link to="/signup">Signup</Link>
                             </li>
                             <li>
-                                <Link to="/users">Users</Link>
+                                <Link to="/signin">Signin</Link>
                             </li>
                         </ul>
                     </nav>
@@ -35,11 +35,11 @@ function App() {
                     {/* A <Switch> looks through its children <Route>s and
                 renders the first one that matches the current URL. */}
                     <Switch>
-                        <Route path="/about">
-                            <SingUp />
+                        <Route path="/signup">
+                            <SignUp />
                         </Route>
-                        <Route path="/users">
-                            <SingIn />
+                        <Route path="/signin">
+                            <SignIn />
                         </Route>
                         <Route path="/">
                             <Home />

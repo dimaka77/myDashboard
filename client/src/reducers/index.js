@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import singupReducer from './singupReducer';
+import { reducer as formReducer } from 'redux-form';
 
 export default combineReducers({
-    singupReducer
+    form: formReducer
 });

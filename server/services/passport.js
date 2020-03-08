@@ -22,13 +22,11 @@ module.exports = function(passport) {
             if (err) return done(err);
 
             if (user) {
-              const error = new Error(
-                'An account with this username already exists.'
-              );
-              error.status = 400;
-              error.name = 'ValidationError';
-
-              return done(error, user);
+              return done(null, false, {
+                status: 400,
+                name: 'ValidationError',
+                message: 'An account with this username already exists.'
+              });
             } else {
               const newUser = new User();
 
@@ -38,9 +36,49 @@ module.exports = function(passport) {
 
               newUser.save(err => {
                 if (err) throw err;
-                return done(null, newUser);
+                return done(null, newUser, {
+                  status: 200
+                });
               });
             }
+          });
+        });
+      }
+    )
+  );
+
+  passport.use(
+    'local-login',
+    new LocalStrategy(
+      {
+        usernameField: 'email',
+        passwordField: 'password',
+        passReqToCallback: true
+      },
+      (req, email, password, done) => {
+        User.findOne({ email: email.trim() }, (err, user) => {
+          // If there are any errors, return the error before anything else
+          if (err) return done(err);
+
+          // If no user is found, return the message
+          if (!user) {
+            return done(null, null, {
+              status: 404,
+              name: 'ValidationError',
+              message: 'No user found.'
+            });
+          }
+
+          if (!user.validPassword(password)) {
+            return done(null, null, {
+              status: 401,
+              name: 'AuthenticationError',
+              message: 'Wrong password.'
+            });
+          }
+          // All is well, return successful user
+          return done(null, user, {
+            status: 200
           });
         });
       }

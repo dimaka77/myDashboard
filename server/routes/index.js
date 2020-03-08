@@ -1,28 +1,65 @@
 module.exports = function(app, passport) {
-  app.get('/', isLoggedIn, (req, res) => {
-    res.send(req.user);
-  });
-
-  app.get('/signup', (req, res) => {
-    res.send(req.user);
-  });
-
-  app.post('/signup', passport.authenticate('local-signup', {}));
-
   app.get('/logout', (req, res) => {
     req.logout();
     res.send(req.user);
   });
 
-  app.get('/login', (req, res) => {
-    res.send(req);
+  app.get('/api/current_user', (req, res) => {
+    console.log('req', req);
+    res.send(req.user);
   });
 
-  function isLoggedIn(req, res, next) {
-    if (req.isAuthenticated()) {
-      return next();
+  app.post('/api/signup', (req, res, done) => {
+    if (!req.body.email) {
+      return res.status(422).json({
+        info: {
+          status: 422,
+          message: "email can't be blank."
+        }
+      });
+    }
+    if (!req.body.password) {
+      return res.status(422).json({
+        info: {
+          status: 422,
+          message: "password can't be blank."
+        }
+      });
+    }
+    passport.authenticate('local-signup', {}, (err, user, info) => {
+      if (err) return done(err);
+
+      return res.status(info.status).json({
+        info,
+        user
+      });
+    })(req, res, done);
+  });
+
+  app.post('/api/login', (req, res, done) => {
+    if (!req.body.email) {
+      return res.status(422).json({
+        info: {
+          status: 422,
+          message: "email can't be blank."
+        }
+      });
+    }
+    if (!req.body.password) {
+      return res.status(422).json({
+        info: {
+          status: 422,
+          message: "password can't be blank."
+        }
+      });
     }
 
-    res.redirect('/login');
-  }
+    passport.authenticate('local-login', {}, (err, user, info) => {
+      if (err) return done(err);
+      return res.status(info.status).json({
+        info,
+        user
+      });
+    })(req, res, done);
+  });
 };

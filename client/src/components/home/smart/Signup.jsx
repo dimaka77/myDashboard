@@ -1,10 +1,10 @@
 import React from 'react';
 import {
 	Button,
-	Label, 
+	Label,
 	InputForm,
-	InputFormWrapper, 
-	Title, 
+	InputFormWrapper,
+	Title,
 	TextInput,
 	TextInputWrapper,
 	ButtonWrapper
@@ -20,15 +20,30 @@ const SignUp = props => {
 				<Title>Sign Up</Title>
 				<TextInputWrapper>
 					<Label>First name:</Label>
-					<Field placeholder="First name" name="firstName" component={TextInput} type="text" />
+					<Field
+						component={TextInput}
+						name="firstName"
+						placeholder="First name"
+						type="text"
+					/>
 				</TextInputWrapper>
 				<TextInputWrapper>
 					<Label>Last name:</Label>
-					<Field placeholder="Last name" name="lastName" component={TextInput} type="text" />
+					<Field
+						component={TextInput}
+						name="lastName"
+						placeholder="Last name"
+						type="text"
+					/>
 				</TextInputWrapper>
 				<TextInputWrapper>
 					<Label>Email:</Label>
-					<Field placeholder="Email" name="email" component={TextInput} type="email" />
+					<Field
+						component={TextInput}
+						name="email"
+						placeholder="Email"
+						type="email"
+					/>
 				</TextInputWrapper>
 				<ButtonWrapper>
 					<Button type="submit">Submit</Button>

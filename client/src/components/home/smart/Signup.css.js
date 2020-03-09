@@ -19,6 +19,9 @@ export const TextInput = styled.input`
     min-height: 20px;
     width: 200px;
     margin: 10px 0 10px 10px;
+    :focus {
+        outline: none;
+    }
 `
 
 export const TextInputWrapper = styled.div`

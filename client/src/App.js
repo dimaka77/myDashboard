@@ -6,7 +6,7 @@ import rootReducer from './reducers';
 // Router
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 // Components
-import { Home, SignIn, SignUp } from './components';
+import { Home, SignIn, SignUp } from './components/home';
 
 import './App.css';
 

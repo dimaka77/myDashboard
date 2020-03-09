@@ -4,9 +4,9 @@ export const InputForm = styled.form`
 `;
 
 export const InputFormWrapper = styled.div`
+    align-items: center;
     display: flex;
     justify-content: center;
-    align-items: center;
     min-height: 100vh;
 `;
 
@@ -16,18 +16,18 @@ export const Title = styled.h1`
 `
 
 export const TextInput = styled.input`
+    margin: 10px 0 10px 10px;
     min-height: 20px;
     width: 200px;
-    margin: 10px 0 10px 10px;
     :focus {
         outline: none;
     }
 `
 
 export const TextInputWrapper = styled.div`
+    align-items: center;
     display: flex;
     justify-content: space-between;
-    align-items: center;
 `
 
 export const Label = styled.label`
@@ -35,12 +35,12 @@ export const Label = styled.label`
 `
 
 export const Button = styled.button`
-    color: #2556DA;
     align-self: flex-end;
-    height: 30px;
-    width: 80px;
     border-radius: 10px;
     border: 2px solid #2556DA;
+    color: #2556DA;
+    height: 30px;
+    width: 80px;
     :focus {
         outline: none;
     }

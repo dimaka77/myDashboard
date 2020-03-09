@@ -4,9 +4,23 @@ module.exports = function(app, passport) {
     res.send(req.user);
   });
 
-  app.get('/api/current_user', (req, res) => {
-    console.log('req', req);
-    res.send(req.user);
+  app.get('/api/current_user', (req, res, done) => {
+    passport.authenticate(
+      'jwt',
+      {
+        session: false
+      },
+      (err, user, info) => {
+        if (err) {
+          done(err);
+        }
+        return res.status(200).send({
+          auth: true,
+          user,
+          info
+        });
+      }
+    )(req, res, done);
   });
 
   app.post('/api/signup', (req, res, done) => {

@@ -14,13 +14,14 @@ let UserSchema = new Schema(
     password: String,
     username: String,
     bio: String,
-    image: String
+    image: String,
+    uuid: String
   },
   { timestamps: true }
 );
 
 UserSchema.methods.generateHash = function(password) {
-  return bcrypt.hashSync(password, bcrypt.genSaltSync(10), null);
+  return bcrypt.hashSync(password, bcrypt.genSaltSync(12), null);
 };
 
 UserSchema.methods.validPassword = function(password) {
@@ -31,7 +32,9 @@ UserSchema.methods.toAuthJSON = function() {
   return {
     username: this.username,
     email: this.email,
-    image: this.image
+    image: this.image,
+    bio: this.bio,
+    uuid: this.uuid
   };
 };
 let User = mongoose.model('User', UserSchema);

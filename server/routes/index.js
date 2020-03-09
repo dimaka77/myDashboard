@@ -40,6 +40,22 @@ module.exports = function(app, passport) {
         }
       });
     }
+    if (!req.body.firstName) {
+      return res.status(422).json({
+        info: {
+          status: 422,
+          message: "first name can't be blank."
+        }
+      });
+    }
+    if (!req.body.lastName) {
+      return res.status(422).json({
+        info: {
+          status: 422,
+          message: "last name can't be blank."
+        }
+      });
+    }
     passport.authenticate('local-signup', {}, (err, user, info) => {
       if (err) return done(err);
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import { Home, SingIn, SignUp } from './components';
+import { Home, SignIn, SignUp } from './components';
 
 import './App.css';
 
@@ -29,7 +29,7 @@ function App() {
             <SignUp />
           </Route>
           <Route path="/users">
-            <SingIn />
+            <SignIn />
           </Route>
           <Route path="/">
             <Home />

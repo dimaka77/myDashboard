@@ -12,7 +12,8 @@ let UserSchema = new Schema(
       index: true
     },
     password: String,
-    username: String,
+    firstName: String,
+    lastName: String,
     bio: String,
     image: String,
     uuid: String
@@ -30,7 +31,8 @@ UserSchema.methods.validPassword = function(password) {
 
 UserSchema.methods.toAuthJSON = function() {
   return {
-    username: this.username,
+    firstName: this.firstName,
+    lastName: this.lastName,
     email: this.email,
     image: this.image,
     bio: this.bio,

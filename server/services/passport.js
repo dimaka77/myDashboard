@@ -30,7 +30,7 @@ module.exports = function(passport) {
                 return done(null, false, {
                   status: 400,
                   name: 'ValidationError',
-                  message: 'An account with this username already exists.'
+                  message: 'An account with this email already exists.'
                 });
               } else {
                 const newUser = new User();
@@ -38,7 +38,8 @@ module.exports = function(passport) {
                 newUser.email = email.trim();
                 newUser.uuid = uuidv4();
                 newUser.password = newUser.generateHash(password);
-                newUser.name = req.body.name.trim();
+                newUser.firstName = req.body.firstName.trim();
+                newUser.lastName = req.body.lastName.trim();
 
                 newUser.save(err => {
                   if (err) throw err;

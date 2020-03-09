@@ -1,3 +1,3 @@
-export const singupState = {
-    SIGNUP_VALID: 'SIGNUP_VALID'
+export const signupState = {
+  SIGNUP_VALID: 'SIGNUP_VALID'
 };

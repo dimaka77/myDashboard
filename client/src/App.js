@@ -18,7 +18,7 @@ function App() {
         <Provider store={store}>
             <Router>
                 <div>
-                    <nav>
+                    <nav className="navigation-bar">
                         <ul>
                             <li>
                                 <Link to="/">Home</Link>

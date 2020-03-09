@@ -20,15 +20,15 @@ const SignUp = props => {
 				<Title>Sign Up</Title>
 				<TextInputWrapper>
 					<Label>First name:</Label>
-					<Field name="firstName" component={TextInput} type="text" />
+					<Field placeholder="First name" name="firstName" component={TextInput} type="text" />
 				</TextInputWrapper>
 				<TextInputWrapper>
 					<Label>Last name:</Label>
-					<Field name="lastName" component={TextInput} type="text" />
+					<Field placeholder="Last name" name="lastName" component={TextInput} type="text" />
 				</TextInputWrapper>
 				<TextInputWrapper>
 					<Label>Email:</Label>
-					<Field name="email" component={TextInput} type="email" />
+					<Field placeholder="Email" name="email" component={TextInput} type="email" />
 				</TextInputWrapper>
 				<ButtonWrapper>
 					<Button type="submit">Submit</Button>

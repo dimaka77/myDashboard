@@ -22,10 +22,10 @@ function App() {
                 renders the first one that matches the current URL. */}
                     <Switch>
                         <Route path="/signup">
-                            <SignUp />
+                            <SignUp onSubmit={(values) => console.log(values)}/>
                         </Route>
                         <Route path="/signin">
-                            <SignIn />
+                            <SignIn onSubmit={(values) => console.log(values)}/>
                         </Route>
                         <Route path="/">
                             <SignIn />

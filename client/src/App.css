@@ -40,3 +40,7 @@
 .navigation-bar {
     position: fixed;
 }
+
+.input-form:focus {
+    outline: none;
+}

@@ -16,15 +16,15 @@ export const Title = styled.h1`
     text-align: center;
 `
 
-export const TextInput = styled.input`
-    margin: 10px 0 10px 10px;
-    min-height: 20px;
-    width: 200px;
-    border-radius: 10px;
-    :focus {
-        outline: none;
-    }
-`
+// export const TextInput = styled.input`
+//     margin: 10px 0 10px 10px;
+//     min-height: 20px;
+//     width: 200px;
+//     border-radius: 10px;
+//     :focus {
+//         outline: none;
+//     }
+// `
 
 export const TextInputWrapper = styled.div`
     align-items: center;
@@ -62,7 +62,7 @@ export const LinkWrapper = styled(TextInputWrapper)`
     margin-bottom: 10px;
 `
 
-export const SwitchPage = styled.a`
+export const SwitchPage = styled.p`
     cursor: pointer;
     color: #2556DA;
     font-size: 12px;

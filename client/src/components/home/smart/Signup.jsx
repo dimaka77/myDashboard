@@ -5,13 +5,13 @@ import {
 	InputFormWrapper,
 	Title,
 	ButtonWrapper
-} from './Signup.css';
+} from './LoginAndSingup.css';
 
 import {
 	InputField
 } from '../../reusable';
 
-import { Field, reduxForm } from 'redux-form';
+import { reduxForm } from 'redux-form';
 
 const SignUp = props => {
 	const { handleSubmit } = props;
@@ -35,7 +35,7 @@ const SignUp = props => {
 					placeholder="Email"
 				/>
 				<ButtonWrapper>
-					<Button type="submit">Submit</Button>
+					<Button type="submit">Sign up</Button>
 				</ButtonWrapper>
 			</InputForm>
 		</InputFormWrapper>

@@ -20,6 +20,7 @@ export const TextInput = styled.input`
     margin: 10px 0 10px 10px;
     min-height: 20px;
     width: 200px;
+    border-radius: 10px;
     :focus {
         outline: none;
     }

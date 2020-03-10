@@ -1,14 +1,15 @@
 import React from 'react';
 import {
 	Button,
-	Label,
 	InputForm,
 	InputFormWrapper,
 	Title,
-	TextInput,
-	TextInputWrapper,
 	ButtonWrapper
 } from './Signup.css';
+
+import {
+	InputField
+} from '../../reusable';
 
 import { Field, reduxForm } from 'redux-form';
 
@@ -18,33 +19,21 @@ const SignUp = props => {
 		<InputFormWrapper>
 			<InputForm onSubmit={handleSubmit}>
 				<Title>Sign Up</Title>
-				<TextInputWrapper>
-					<Label>First name:</Label>
-					<Field
-						component={TextInput}
-						name="firstName"
-						placeholder="First name"
-						type="text"
-					/>
-				</TextInputWrapper>
-				<TextInputWrapper>
-					<Label>Last name:</Label>
-					<Field
-						component={TextInput}
-						name="lastName"
-						placeholder="Last name"
-						type="text"
-					/>
-				</TextInputWrapper>
-				<TextInputWrapper>
-					<Label>Email:</Label>
-					<Field
-						component={TextInput}
-						name="email"
-						placeholder="Email"
-						type="email"
-					/>
-				</TextInputWrapper>
+				<InputField
+					fieldName="firstName"
+					labelTxt="First name:"
+					placeholder="First name"
+				/>
+				<InputField
+					fieldName="lastName"
+					labelTxt="Last name:"
+					placeholder="Last name"
+				/>
+				<InputField
+					fieldName="Email"
+					labelTxt="Email:"
+					placeholder="Email"
+				/>
 				<ButtonWrapper>
 					<Button type="submit">Submit</Button>
 				</ButtonWrapper>

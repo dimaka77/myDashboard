@@ -3,16 +3,20 @@ import { Field } from 'redux-form';
 
 import { Label, TextInputWrapper, TextInput } from './InputField.css';
 
-const InputField = { labelTxt, fieldName, placeholder, type } => {
+const InputField = ({
+    labelTxt,
+    fieldName,
+    placeholder,
+    type = 'text'
+}) => 
     <TextInputWrapper>
         <Label>{labelTxt}</Label>
         <Field
             component={TextInput}
-            name="firstName"
-            placeholder="First name"
-            type="text"
+            name={fieldName}
+            placeholder={placeholder}
+            type={type}
         />
     </TextInputWrapper>
-}
 
 export default InputField;

@@ -1,2 +1,2 @@
-import { default as InputField } from './InputField';
+import { default as InputField } from './InputField.jsx';
 export { InputField };

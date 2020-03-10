@@ -20,14 +20,15 @@ const SignIn = props => {
 			<InputForm onSubmit={handleSubmit}>
 				<Title>Sign In</Title>
 				<InputField
-					fieldName="firstName"
-					labelTxt="First name:"
-					placeholder="First name"
+					fieldName="Email"
+					labelTxt="Email:"
+					placeholder="Email"
 				/>
 				<InputField
-					fieldName="lastName"
-					labelTxt="Last name:"
-					placeholder="Last name"
+					fieldName="password"
+					labelTxt="Passowrd:"
+                    placeholder="Password"
+                    type="password"
 				/>
 				<ButtonWrapper>
 					<Button type="submit">Sing in</Button>

@@ -18,20 +18,6 @@ function App() {
         <Provider store={store}>
             <Router>
                 <div>
-                    <nav className="navigation-bar">
-                        <ul>
-                            <li>
-                                <Link to="/">Home</Link>
-                            </li>
-                            <li>
-                                <Link to="/signup">Signup</Link>
-                            </li>
-                            <li>
-                                <Link to="/signin">Signin</Link>
-                            </li>
-                        </ul>
-                    </nav>
-
                     {/* A <Switch> looks through its children <Route>s and
                 renders the first one that matches the current URL. */}
                     <Switch>
@@ -42,7 +28,7 @@ function App() {
                             <SignIn />
                         </Route>
                         <Route path="/">
-                            <Home />
+                            <SignIn />
                         </Route>
                     </Switch>
                 </div>

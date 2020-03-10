@@ -59,6 +59,7 @@ export const ButtonWrapper = styled(TextInputWrapper)`
 
 export const LinkWrapper = styled(TextInputWrapper)`
     justify-content: center;
+    margin-bottom: 10px;
 `
 
 export const SwitchPage = styled.a`

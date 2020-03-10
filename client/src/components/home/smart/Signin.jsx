@@ -3,15 +3,21 @@ import {
 	Button,
 	InputForm,
 	InputFormWrapper,
-	Title,
+    Title,
+	LinkWrapper,
+	SwitchPage,
 	ButtonWrapper
-} from './LoginAndSingup.css';
+} from './LoginAndSignUp.css';
 
 import {
 	InputField
 } from '../../reusable';
 
+import { Link } from 'react-router-dom';
+
+
 import { reduxForm } from 'redux-form';
+
 
 const SignIn = props => {
 	const { handleSubmit } = props;
@@ -30,6 +36,11 @@ const SignIn = props => {
                     placeholder="Password"
                     type="password"
 				/>
+                <LinkWrapper>
+					<Link to='/signup'>
+						<SwitchPage>Don't have an account? Go to Sign Up page</SwitchPage>
+					</Link>
+				</LinkWrapper>
 				<ButtonWrapper>
 					<Button type="submit">Sing in</Button>
 				</ButtonWrapper>

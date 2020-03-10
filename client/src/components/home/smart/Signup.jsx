@@ -7,11 +7,14 @@ import {
 	SwitchPage,
 	LinkWrapper,
 	Title
-} from './LoginAndSingup.css';
+} from './LoginAndSignUp.css';
 
 import {
 	InputField
 } from '../../reusable';
+
+import { Link } from 'react-router-dom';
+
 
 import { reduxForm } from 'redux-form';
 
@@ -37,7 +40,9 @@ const SignUp = props => {
 					placeholder="Email"
 				/>
 				<LinkWrapper>
-					<SwitchPage>Already have an account? Go to Sign In page</SwitchPage>
+					<Link to='/signin'>
+						<SwitchPage>Already have an account? Go to Sign In page</SwitchPage>
+					</Link>
 				</LinkWrapper>
 				<ButtonWrapper>
 					<Button type="submit">Sign up</Button>

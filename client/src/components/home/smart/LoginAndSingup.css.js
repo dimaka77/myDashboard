@@ -56,3 +56,15 @@ export const Button = styled.button`
 export const ButtonWrapper = styled(TextInputWrapper)`
     justify-content: flex-end;
 `
+
+export const LinkWrapper = styled(TextInputWrapper)`
+    justify-content: center;
+`
+
+export const SwitchPage = styled.a`
+    cursor: pointer;
+    color: #2556DA;
+    font-size: 12px;
+    margin: 10px;
+    text-decoration: underline;
+`

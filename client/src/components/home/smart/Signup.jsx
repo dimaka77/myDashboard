@@ -1,10 +1,12 @@
 import React from 'react';
 import {
 	Button,
+	ButtonWrapper,
 	InputForm,
 	InputFormWrapper,
-	Title,
-	ButtonWrapper
+	SwitchPage,
+	LinkWrapper,
+	Title
 } from './LoginAndSingup.css';
 
 import {
@@ -34,6 +36,9 @@ const SignUp = props => {
 					labelTxt="Email:"
 					placeholder="Email"
 				/>
+				<LinkWrapper>
+					<SwitchPage>Already have an account? Go to Sign In page</SwitchPage>
+				</LinkWrapper>
 				<ButtonWrapper>
 					<Button type="submit">Sign up</Button>
 				</ButtonWrapper>

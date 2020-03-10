@@ -12,7 +12,7 @@ const InputField = ({
     <TextInputWrapper>
         <Label>{labelTxt}</Label>
         <Field
-            component={TextInput}
+            component="input"
             name={fieldName}
             placeholder={placeholder}
             type={type}

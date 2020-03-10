@@ -26,7 +26,7 @@ const SignIn = props => {
 			<InputForm onSubmit={handleSubmit}>
 				<Title>Sign In</Title>
 				<InputField
-					fieldName="Email"
+					fieldName="email"
 					labelTxt="Email:"
 					placeholder="Email"
 				/>

@@ -32,7 +32,7 @@ const SignIn = props => {
 				/>
 				<InputField
 					fieldName="password"
-					labelTxt="Passowrd:"
+					labelTxt="Passoword:"
                     placeholder="Password"
                     type="password"
 				/>
@@ -42,7 +42,7 @@ const SignIn = props => {
 					</Link>
 				</LinkWrapper>
 				<ButtonWrapper>
-					<Button type="submit">Sing in</Button>
+					<Button type="submit">Sing In</Button>
 				</ButtonWrapper>
 			</InputForm>
 		</InputFormWrapper>

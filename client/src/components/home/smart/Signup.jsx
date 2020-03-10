@@ -45,7 +45,7 @@ const SignUp = props => {
 					</Link>
 				</LinkWrapper>
 				<ButtonWrapper>
-					<Button type="submit">Sign up</Button>
+					<Button type="submit">Sign Up</Button>
 				</ButtonWrapper>
 			</InputForm>
 		</InputFormWrapper>

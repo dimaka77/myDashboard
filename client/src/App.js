@@ -1,54 +1,56 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 // Redux
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import rootReducer from './reducers';
 // Router
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 // Components
-import { Home, SignIn, SignUp } from './components/home';
+import { SignIn, SignUp } from './components/home';
+
+import { loginAPI, signUpAPI } from './actions/singin_singup';
 
 import './App.css';
 
 // Redux store
 const store = createStore(rootReducer);
 
-function App() {
-    return (
-        <Provider store={store}>
-            <Router>
-                <div>
-                    <nav className="navigation-bar">
-                        <ul>
-                            <li>
-                                <Link to="/">Home</Link>
-                            </li>
-                            <li>
-                                <Link to="/signup">Signup</Link>
-                            </li>
-                            <li>
-                                <Link to="/signin">Signin</Link>
-                            </li>
-                        </ul>
-                    </nav>
+class App extends PureComponent {
+    constructor(props){
+        super(props);
+    }
 
-                    {/* A <Switch> looks through its children <Route>s and
-                renders the first one that matches the current URL. */}
-                    <Switch>
-                        <Route path="/signup">
-                            <SignUp />
-                        </Route>
-                        <Route path="/signin">
-                            <SignIn />
-                        </Route>
-                        <Route path="/">
-                            <Home />
-                        </Route>
-                    </Switch>
-                </div>
-            </Router>
-        </Provider>
-    );
+    handleLogin = (props) => {
+        loginAPI(props);
+    }
+
+    handleSignup = (props) => {
+        signUpAPI(props);
+    }
+   
+    render() {
+            return (
+                <Provider store={store}>
+                <Router>
+                    <div>
+                        {/* A <Switch> looks through its children <Route>s and
+                    renders the first one that matches the current URL. */}
+                        <Switch>
+                            <Route path="/signup">
+                                <SignUp onSubmit={(values) => this.handleSignup(values)}/>
+                            </Route>
+                            <Route path="/signin">
+                                <SignIn onSubmit={(values) => this.handleLogin(values)}/>
+                            </Route>
+                            <Route path="/">
+                                <SignIn />
+                            </Route>
+                        </Switch>
+                    </div>
+                </Router>
+            </Provider>
+        );
+    }
 }
 
 export default App;

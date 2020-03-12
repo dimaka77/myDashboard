@@ -8,7 +8,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 // Components
 import { SignIn, SignUp } from './components/home';
 
-import { loginAPI, signUpAPI } from './actions/singin_singup';
+import { loginAPI, signUpAPI } from './actions/loginAndSignUp';
 
 import './App.css';
 

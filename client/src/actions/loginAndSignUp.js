@@ -8,5 +8,10 @@ export const loginAPI = (props) => {
 }
 
 export const signUpAPI = (props) => {
-    axios.get('https://google.com').then(resp => console.log(resp));
+    axios.post('/api/signup', {
+        email: props.email,
+        firstName: props.firstName,
+        lastName: props.lastName,
+        password: props.password
+    }).then(resp => console.log(resp));
 }

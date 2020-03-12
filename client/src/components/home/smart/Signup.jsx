@@ -35,10 +35,16 @@ const SignUp = props => {
 					placeholder="Last name"
 				/>
 				<InputField
-					fieldName="Email"
+					fieldName="email"
 					labelTxt="Email:"
 					placeholder="Email"
 				/>
+				<InputField
+					fieldName="password"
+					labelTxt="Password:"
+					placeholder="Password"
+					type="password"
+				/>	
 				<LinkWrapper>
 					<Link to='/signin'>
 						<SwitchPage>Already have an account? Go to Sign In page</SwitchPage>

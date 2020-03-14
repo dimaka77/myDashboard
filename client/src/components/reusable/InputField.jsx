@@ -1,31 +1,25 @@
 import React from 'react';
 import { Field } from 'redux-form';
+import { InputComponent } from '.';
 
 import { Label, TextInputWrapper } from './InputField.css';
-
-const styles = {
-    margin: '10px 0 10px 10px',
-    minHeight: '20px',
-    width: '200px',
-    borderRadius: '5px',
-    padding: '0 20px 0 5px'
-}
 
 const InputField = ({
     labelTxt,
     fieldName,
     placeholder,
-    type = 'text'
+    type = 'text',
+    validation
 }) => 
     <TextInputWrapper>
         <Label>{labelTxt}</Label>
         <Field
-            component="input"
+            component={InputComponent}
             className="input-form"
             name={fieldName}
             placeholder={placeholder}
             type={type}
-            style={styles}
+            validate={validation}
         />
     </TextInputWrapper>
 

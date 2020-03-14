@@ -10,7 +10,8 @@ import {
 } from './LoginAndSignUp.css';
 
 import {
-	InputField
+	InputField,
+	validations
 } from '../../reusable';
 
 import { Link } from 'react-router-dom';
@@ -21,6 +22,7 @@ import { reduxForm } from 'redux-form';
 
 const SignIn = props => {
 	const { handleSubmit } = props;
+	const { email, required } = validations;
 	return (
 		<InputFormWrapper>
 			<InputForm onSubmit={handleSubmit}>
@@ -29,12 +31,14 @@ const SignIn = props => {
 					fieldName="email"
 					labelTxt="Email:"
 					placeholder="Email"
+					validation={[email, required]}
 				/>
 				<InputField
 					fieldName="password"
 					labelTxt="Passoword:"
                     placeholder="Password"
-                    type="password"
+					type="password"
+					validation={required}
 				/>
                 <LinkWrapper>
 					<Link to='/signup'>
@@ -49,4 +53,4 @@ const SignIn = props => {
 	);
 };
 
-export default reduxForm({ form: 'signup' })(SignIn);
+export default reduxForm({ form: 'signin' })(SignIn);

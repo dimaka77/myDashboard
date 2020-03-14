@@ -4,6 +4,8 @@ import {
     MessageSpan,
     MessageWrapper
 } from './InputComponent.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons';
 
 
 const styles = {
@@ -27,8 +29,8 @@ const InputComponent = ({
         </div>
         <MessageWrapper>
             {touched &&
-                ((error && <MessageSpan>{error}</MessageSpan>) ||
-                (warning && <MessageSpan>{warning}</MessageSpan>))}
+                ((error && <MessageSpan>{error}<FontAwesomeIcon color="red" icon={faExclamationCircle} /></MessageSpan>) ||
+                (warning && <MessageSpan>{warning}<FontAwesomeIcon color="yellow" icon={faExclamationCircle} /></MessageSpan>))}
         </MessageWrapper>
     </div> 
 

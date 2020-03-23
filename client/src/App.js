@@ -6,10 +6,8 @@ import rootReducer from './reducers';
 // Router
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 // Components
-import { SignIn, SignUp } from './components/home';
-
 import { loginAPI, signUpAPI } from './actions/loginAndSignUp';
-
+import AppRoutes from './routers/appRoutes';
 import './App.css';
 
 // Redux store
@@ -33,19 +31,7 @@ class App extends PureComponent {
                 <Provider store={store}>
                 <Router>
                     <div>
-                        {/* A <Switch> looks through its children <Route>s and
-                    renders the first one that matches the current URL. */}
-                        <Switch>
-                            <Route path="/signup">
-                                <SignUp onSubmit={(values) => this.handleSignup(values)}/>
-                            </Route>
-                            <Route path="/signin">
-                                <SignIn onSubmit={(values) => this.handleLogin(values)}/>
-                            </Route>
-                            <Route path="/">
-                                <SignIn />
-                            </Route>
-                        </Switch>
+                       <AppRoutes />
                     </div>
                 </Router>
             </Provider>

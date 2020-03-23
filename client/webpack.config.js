@@ -60,6 +60,7 @@ module.exports = {
         compress: true,
         port: 3000,
         watchContentBase: true,
+        historyApiFallback: true,
         progress: true,
         proxy: {
             '/api': {
